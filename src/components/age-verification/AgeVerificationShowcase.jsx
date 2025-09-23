@@ -73,10 +73,10 @@ export default function AgeVerificationShowcase() {
               method={m}
               delay={idx * 0.05}
               onHow={() => {
-                /* open drawer */
+                onOpen("how", m.key);
               }}
               onDemo={() => {
-                /* open demo */
+                onOpen("demo", m.key);
               }}
             />
           ))}
