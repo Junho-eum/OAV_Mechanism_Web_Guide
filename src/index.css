@@ -1,0 +1,36 @@
+/* Tailwind layers */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Minimal, non-opinionated base so Tailwind controls the look */
+:root {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* Let your components decide colors; do NOT force dark or light globally */
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  /* no display:flex; no background; no color */
+}
+
+/* Remove global button overrides; Tailwind classes will style buttons */
+button { all: unset; }
+button { 
+  /* restore basics without styling; Tailwind will handle visuals */
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Links inherit color from components */
+a { text-decoration: none; }
+
+/* Optional: smooth scrolling */
+html { scroll-behavior: smooth; }
