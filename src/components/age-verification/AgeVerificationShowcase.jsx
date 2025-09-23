@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { METHODS } from "../../data/methods";
 import MethodCard from "./MethodCard";
 import Drawer from "./Drawer";
@@ -33,6 +33,17 @@ export default function AgeVerificationShowcase() {
   const [openHow, setOpenHow] = useState(null);
   const [openDemo, setOpenDemo] = useState(null);
 
+// Shuffle METHODS only once when component mounts
+  const shuffledMethods = useMemo(() => {
+    // Copy so original METHODS stays untouched
+    const arr = [...METHODS];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]]; // swap
+    }
+    return arr;
+  }, []);
+
   const onOpen = (type, key) => {
     track("open_panel", { type, key });
     if (type === "how") setOpenHow(key);
@@ -51,19 +62,22 @@ export default function AgeVerificationShowcase() {
             Age Verification Methods
           </h1>
           <p className="text-sm text-gray-600 mt-1">
-            Explore options. Click a card to learn how it works or try a
-            privacy-safe demo.
+            Explore various age verification techniques
           </p>
         </header>
 
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {METHODS.map((m, idx) => (
+          {shuffledMethods.map((m, idx) => (
             <MethodCard
               key={m.key}
               method={m}
-              delay={idx * 0.03}
-              onHow={() => onOpen("how", m.key)}
-              onDemo={() => onOpen("demo", m.key)}
+              delay={idx * 0.05}
+              onHow={() => {
+                /* open drawer */
+              }}
+              onDemo={() => {
+                /* open demo */
+              }}
             />
           ))}
         </section>

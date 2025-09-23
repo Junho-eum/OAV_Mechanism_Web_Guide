@@ -10,7 +10,7 @@ export const METHODS = [
     key: "upload-id",
     name: "Upload Your ID",
     icon: IdCard,
-    color: "from-amber-200 to-amber-100",
+    color: "from-indigo-200 to-indigo-100",
     summary:
       "Verify your age by uploading a photo of your government-issued ID.",
     how: [
@@ -37,7 +37,7 @@ export const METHODS = [
     key: "card-check",
     name: "Verify with Your Credit Card",
     icon: CreditCard,
-    color: "from-emerald-200 to-emerald-100",
+    color: "from-indigo-200 to-indigo-100",
     summary:
       "Confirm your age using a $0 authorization check with your card issuer.",
     how: [
@@ -50,7 +50,7 @@ export const METHODS = [
     key: "oidc",
     name: "Log in With an Existing Account (Google, Apple, X/Twitter, Facebook)",
     icon: LogIn,
-    color: "from-sky-200 to-sky-100",
+    color: "from-indigo-200 to-indigo-100",
     summary:
       "Sign in with an existing account (Google, Apple, Facebook, or X/Twitter) to confirm your age.",
     how: [
@@ -64,7 +64,7 @@ export const METHODS = [
     key: "mdl",
     name: "Use your Digital ID App (e.g., Yoti, ID.me, Mobile Driver's License)",
     icon: ShieldCheck,
-    color: "from-fuchsia-200 to-fuchsia-100",
+    color: "from-indigo-200 to-indigo-100",
     summary:
       "Prove your age with a digital ID app on your mobile device such as Yoti, ID.me, or a Mobile Driver's License (mDL).",
     how: [
