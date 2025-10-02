@@ -4,6 +4,10 @@ import MethodCard from "./MethodCard";
 import Drawer from "./Drawer";
 import StepCard from "./StepCard"; // only if you want to reuse here; optional
 import useAnalytics from "../../hooks/useAnalytics";
+import HowItWorksSlider from "./HowItWorksSlider";
+
+
+
 
 function HowItWorks({ method }) {
   return (
@@ -33,7 +37,14 @@ export default function AgeVerificationShowcase() {
   const [openHow, setOpenHow] = useState(null);
   const [openDemo, setOpenDemo] = useState(null);
 
-// Shuffle METHODS only once when component mounts
+  // Build a lookup so drawers can fetch method data by key (stable even after shuffle)
+  const methodByKey = useMemo(() => {
+    const map = new Map();
+    METHODS.forEach((m) => map.set(m.key, m));
+    return map;
+  }, []);
+  
+  // Shuffle METHODS only once when component mounts
   const shuffledMethods = useMemo(() => {
     // Copy so original METHODS stays untouched
     const arr = [...METHODS];
@@ -64,6 +75,10 @@ export default function AgeVerificationShowcase() {
           <p className="text-sm text-gray-600 mt-1">
             Explore various age verification techniques
           </p>
+          <p className="text-sm text-gray-600 mt-1">
+            Please keep in mind that this is a showcase of different methods and
+            does not store your data.
+          </p>
         </header>
 
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
@@ -86,11 +101,11 @@ export default function AgeVerificationShowcase() {
       <Drawer
         open={!!openHow}
         onClose={closeAll}
-        title={METHODS.find((m) => m.key === openHow)?.name + " – How it works"}
+        title={
+          openHow ? `${methodByKey.get(openHow)?.name} – How it works` : ""
+        }
       >
-        {openHow && (
-          <HowItWorks method={METHODS.find((m) => m.key === openHow)} />
-        )}
+        {openHow && <HowItWorksSlider method={methodByKey.get(openHow)} />}
       </Drawer>
 
       <Drawer
