@@ -17,6 +17,11 @@ import digitalStep2 from "../assets/digitalID_step2.png";
 import digitalStep3 from "../assets/digitalID_step3.png";
 import digitalStep4 from "../assets/digitalID_step4.png";
 import digitalStep5 from "../assets/digitalID_step5.png";
+import creditStep1 from "../assets/credit_step1.png";
+import creditStep2 from "../assets/credit_step2.png";
+import idStep1 from "../assets/ID_step1.png";
+import idStep2 from "../assets/ID_step2.png";
+import idStep3 from "../assets/ID_step3.png";
 
 export const METHODS = [
   {
@@ -26,10 +31,28 @@ export const METHODS = [
     color: "from-indigo-200 to-indigo-100",
     summary:
       "Verify your age by uploading a photo of your government-issued ID.",
-    how: [
-      "Take clear photos of the front and back of your ID and upload them.",
-      "The system scans the ID to verify its authenticity.",
-      "Your date of birth is extracted to confirm if you are over 18.",
+    slides: [
+      {
+        kicker: "Step 1",
+        title: "Take photos of your ID",
+        body: "Take clear photos of the front and back of your ID and upload them.",
+        image: idStep1,
+        imageAlt: "Taking photo of ID illustration",
+      },
+      {
+        kicker: "Step 2",
+        title: "Upload photos",
+        body: "The system scans the ID to verify its authenticity.",
+        image: idStep2,
+        imageAlt: "Uploading ID photos illustration",
+      },
+      {
+        kicker: "Step 3",
+        title: "Age verified!",
+        body: "The system verifies the authenticity of your ID and confirms you are over 18.",
+        image: idStep3,
+        imageAlt: "Verified claim result illustration",
+      },
     ],
     demo: DemoUploadID,
   },
@@ -39,7 +62,6 @@ export const METHODS = [
     icon: Camera,
     color: "from-indigo-200 to-indigo-100",
     summary: "Use your device's camera to estimate your age from a selfie.",
-    // Slides for the How-it-works slider (images + copy)
     slides: [
       {
         kicker: "Step 1",
@@ -72,9 +94,21 @@ export const METHODS = [
     color: "from-indigo-200 to-indigo-100",
     summary:
       "Confirm your age using a $0 authorization check with your card issuer.",
-    how: [
-      "You provide your credit or debit card number.",
-      "The card issuer confirms your date of birth or verifies you are over 18.",
+    slides: [
+      {
+        kicker: "Step 1",
+        title: "Provide credit card details",
+        body: "Enter your credit card number, expiration date, and CVV code.",
+        image: creditStep1,
+        imageAlt: "credit card details illustration",
+      },
+      {
+        kicker: "Step 2",
+        title: "Age verified!",
+        body: "The site receives pre-verified information confirming you are over 18.",
+        image: creditStep2,
+        imageAlt: "Verified claim result illustration",
+      },
     ],
     demo: DemoCardCheck,
   },
