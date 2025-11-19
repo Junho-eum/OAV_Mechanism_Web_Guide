@@ -29,11 +29,12 @@ export default function MethodCard({ method, onHow, onDemo, delay = 0 }) {
         </p>
       </div>
       <div className="mt-4 flex items-center gap-2">
-        <Button variant="secondary" onClick={onHow}>
+        <Button
+          variant="secondary"
+          onClick={onHow}
+          className="w-full justify-center py-2 text-sm font-medium !bg-black text-white hover:!bg-neutral-900"
+        >
           <Info className="w-4 h-4 mr-1" /> How it works
-        </Button>
-        <Button onClick={onDemo}>
-          <Play className="w-4 h-4 mr-1" /> Try demo
         </Button>
       </div>
     </motion.div>

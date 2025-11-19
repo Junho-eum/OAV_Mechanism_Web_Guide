@@ -76,8 +76,7 @@ export default function AgeVerificationShowcase() {
             Explore various age verification techniques
           </p>
           <p className="text-sm text-gray-600 mt-1">
-            Please keep in mind that this is a showcase of different methods and
-            does not store your data.
+            Click "How it works" to learn more about each method.
           </p>
         </header>
 
