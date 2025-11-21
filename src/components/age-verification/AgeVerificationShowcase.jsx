@@ -66,19 +66,6 @@ export default function AgeVerificationShowcase() {
           </p>
         </header>
 
-        {/* Method cards */}
-        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {shuffledMethods.map((m, idx) => (
-            <MethodCard
-              key={m.key}
-              method={m}
-              delay={idx * 0.05}
-              completed={!!completed[m.key]}
-              onHow={() => handleOpenHow(m.key)}
-            />
-          ))}
-        </section>
-
         {/* Global progress + completion banner */}
         <div className="space-y-2 mb-4">
           <ProgressBar total={totalMethods} viewed={viewedCount} />
@@ -99,6 +86,19 @@ export default function AgeVerificationShowcase() {
             )}
           </div>
         </div>
+
+        {/* Method cards */}
+        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {shuffledMethods.map((m, idx) => (
+            <MethodCard
+              key={m.key}
+              method={m}
+              delay={idx * 0.05}
+              completed={!!completed[m.key]}
+              onHow={() => handleOpenHow(m.key)}
+            />
+          ))}
+        </section>
       </div>
 
       {/* How it works drawer */}
