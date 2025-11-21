@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { classNames } from "../../utils/classNames";
 
-export default function HowItWorksSlider({ method }) {
+export default function HowItWorksSlider({ method, onComplete }) {
   // Accept either method.slides (rich) or fallback to method.how (strings)
   const slides = useMemo(() => {
     if (Array.isArray(method.slides) && method.slides.length)
@@ -20,7 +20,19 @@ export default function HowItWorksSlider({ method }) {
   const goPrev = () => canPrev && setIdx((i) => i - 1);
   const goNext = () => canNext && setIdx((i) => i + 1);
   const goTo = (i) => setIdx(i);
+  const hasCompletedRef = useRef(false);
 
+  useEffect(() => {
+    if (
+      !hasCompletedRef.current &&
+      typeof onComplete === "function" &&
+      total > 0 &&
+      idx === total - 1
+    ) {
+      hasCompletedRef.current = true;
+      onComplete(method?.key || method?.name || "unknown");
+    }
+  }, [idx, total, onComplete, method]);
   // Keyboard support
   const containerRef = useRef(null);
   useEffect(() => {
@@ -131,6 +143,11 @@ export default function HowItWorksSlider({ method }) {
       {/* Accessibility: small step counter */}
       <p className="text-xs text-gray-500 text-center">
         {idx + 1} / {total}
+        {total > 0 && idx === total - 1 && (
+          <span className="ml-2 inline-flex items-center rounded-full border border-emerald-100 bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-700">
+            All steps viewed
+          </span>
+        )}
       </p>
     </div>
   );

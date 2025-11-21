@@ -92,8 +92,7 @@ export const METHODS = [
     name: "Verify with Your Credit Card",
     icon: CreditCard,
     color: "from-indigo-200 to-indigo-100",
-    summary:
-      "Confirm your age using a $0 authorization check with your card issuer.",
+    summary: "Confirm your age by providing your credit card details.",
     slides: [
       {
         kicker: "Step 1",
@@ -117,8 +116,7 @@ export const METHODS = [
     name: "Log in With an Existing Account (Google, Apple, X/Twitter, Facebook)",
     icon: LogIn,
     color: "from-indigo-200 to-indigo-100",
-    summary:
-      "Sign in with an existing account to confirm your age via OpenID Connect.",
+    summary: "Sign in with an existing account to confirm your age.",
 
     slides: [
       {
@@ -147,16 +145,16 @@ export const METHODS = [
   },
   {
     key: "mdl",
-    name: "Use your Digital ID App (e.g., Yoti, ID.me, Mobile Driver's License)",
+    name: "Use your Digital ID App (e.g., Yoti, Mobile Driver's License)",
     icon: ShieldCheck,
     color: "from-indigo-200 to-indigo-100",
     summary:
-      "Prove your age with a digital ID app such as Yoti, ID.me, or a Mobile Driver's License (mDL).",
+      "Prove your age with a digital ID app such as Yoti, Mobile Driver's License.",
     slides: [
       {
         kicker: "Step 1",
         title: "Download a digital ID app",
-        body: "Install a digital ID app that supports age verification from your app store.",
+        body: "Install a digital ID app (e.g., ID.me) that supports age verification from your app store.",
         image: digitalStep1,
         imageAlt: "Provider selection illustration",
       },
