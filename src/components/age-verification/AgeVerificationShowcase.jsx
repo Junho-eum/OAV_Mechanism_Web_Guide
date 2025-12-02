@@ -60,9 +60,9 @@ export default function AgeVerificationShowcase() {
             Explore various age verification techniques.
           </p>
           <p className="text-base font-medium text-gray-800 dark:text-neutral-200 mt-1">
-            Click &quot;How it works&quot; to learn more about each method.
-            Once you have viewed all methods, you can proceed to the next
-            section of the survey.
+            Click &quot;How it works&quot; to learn more about each method. Once
+            you have viewed all methods, you can proceed to the next section of
+            the survey.
           </p>
         </header>
 
@@ -77,7 +77,10 @@ export default function AgeVerificationShowcase() {
             }`}
           >
             {allDone ? (
-              <>You&apos;ve reviewed all age verification methods. You may proceed.</>
+              <>
+                You&apos;ve reviewed all age verification methods. You may
+                proceed.
+              </>
             ) : (
               <>
                 Please review the &quot;How it works&quot; information for each
@@ -113,6 +116,7 @@ export default function AgeVerificationShowcase() {
           <HowItWorksSlider
             method={methodByKey.get(openHow)}
             onComplete={handleMethodComplete}
+            onFinish={handleCloseHow}
           />
         )}
       </Drawer>

@@ -73,14 +73,14 @@ export const METHODS = [
       {
         kicker: "Step 2",
         title: "Local age estimation",
-        body: "An on-device model estimates an age range. Only an over-18/under-18 result is returned.",
+        body: "An algorithm on your device estimates your age range to confirm whether you are over or under 18.",
         image: faceStep2,
         imageAlt: "Estimating age on device illustration",
       },
       {
         kicker: "Step 3",
         title: "Age verified!",
-        body: "An on-device model estimates an age range. Only an over-18/under-18 result is returned.",
+        body: "The website/app verifies your age with the over 18 confirmation.",
         image: faceStep3,
         imageAlt: "Estimating age on device illustration",
       },

@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { classNames } from "../../utils/classNames";
 
-export default function HowItWorksSlider({ method, onComplete }) {
+export default function HowItWorksSlider({ method, onComplete, onFinish }) {
   // Accept either method.slides (rich) or fallback to method.how (strings)
   const slides = useMemo(() => {
     if (Array.isArray(method.slides) && method.slides.length)
@@ -124,19 +124,35 @@ export default function HowItWorksSlider({ method, onComplete }) {
               />
             ))}
           </div>
-          <button
-            onClick={goNext}
-            disabled={!canNext}
-            className={classNames(
-              "inline-flex items-center gap-1 rounded-xl px-3.5 py-2 text-sm text-white",
-              canNext
-                ? "bg-gray-900 hover:bg-black"
-                : "bg-gray-400 opacity-60 cursor-not-allowed"
-            )}
-          >
-            Next
-            <ChevronRight className="w-4 h-4" />
-          </button>
+          {idx === total - 1 ? (
+            <button
+              onClick={() => {
+                if (typeof onFinish === "function") {
+                  onFinish();
+                }
+              }}
+              className={classNames(
+                "inline-flex items-center gap-1 rounded-xl px-3.5 py-2 text-sm text-white",
+                "bg-gray-900 hover:bg-black"
+              )}
+            >
+              Finish
+            </button>
+          ) : (
+            <button
+              onClick={goNext}
+              disabled={!canNext}
+              className={classNames(
+                "inline-flex items-center gap-1 rounded-xl px-3.5 py-2 text-sm text-white",
+                canNext
+                  ? "bg-gray-900 hover:bg-black"
+                  : "bg-gray-400 opacity-60 cursor-not-allowed"
+              )}
+            >
+              Next
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          )}
         </div>
       </div>
 

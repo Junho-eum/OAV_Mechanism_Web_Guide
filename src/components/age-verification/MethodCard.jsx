@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Info, Play } from "lucide-react";
 import { Button } from "../../styles/ui";
 
+
 export default function MethodCard({
   method,
   onHow,
@@ -26,14 +27,9 @@ export default function MethodCard({
         </div>
         <div className="flex-1">
           <div className="flex items-center flex-wrap gap-2">
-            <h3 className="font-semibold text-base">{method.name}</h3>
-            {completed && (
-              <span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-700">
-                ✓ Viewed
-              </span>
-            )}
+            <h3 className="font-bold text-[22px]">{method.name}</h3>
           </div>
-          <p className="mt-1 text-sm text-gray-600">{method.summary}</p>
+          <p className="mt-2 text-[20px] text-gray-600">{method.summary}</p>
         </div>
       </div>
 
@@ -41,9 +37,19 @@ export default function MethodCard({
         <Button
           variant="secondary"
           onClick={onHow}
-          className="w-full justify-center py-2 text-sm font-medium !bg-black text-white hover:!bg-neutral-900"
+          className={
+            completed
+              ? "w-full justify-center py-2 text-sm font-medium border border-emerald-600 bg-emerald-600 text-white"
+              : "w-full justify-center py-2 text-sm font-medium !bg-black text-white hover:!bg-neutral-900"
+          }
         >
-          <Info className="w-4 h-4 mr-1" /> How it works
+          {completed ? (
+            <>✓ Viewed</>
+          ) : (
+            <>
+              <Info className="w-4 h-4 mr-1" /> How it works
+            </>
+          )}
         </Button>
       </div>
     </motion.div>
