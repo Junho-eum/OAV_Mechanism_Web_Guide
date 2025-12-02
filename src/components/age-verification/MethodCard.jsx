@@ -35,12 +35,11 @@ export default function MethodCard({
 
       <div className="mt-4 flex items-center gap-2">
         <Button
-          variant="secondary"
           onClick={onHow}
           className={
             completed
-              ? "w-full justify-center py-2 text-sm font-medium border border-emerald-600 bg-emerald-600 text-white"
-              : "w-full justify-center py-2 text-sm font-medium !bg-black text-white hover:!bg-neutral-900"
+              ? "w-full justify-center py-2 text-sm font-medium border border-emerald-600 !bg-emerald-600 !text-white"
+              : "w-full justify-center py-2 text-sm font-medium !bg-black !text-white hover:!bg-neutral-900"
           }
         >
           {completed ? (
