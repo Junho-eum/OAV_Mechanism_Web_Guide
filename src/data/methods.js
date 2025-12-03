@@ -26,7 +26,7 @@ import idStep3 from "../assets/ID_step3.png";
 export const METHODS = [
   {
     key: "upload-id",
-    name: "Governmental-issued ID Scan",
+    name: "Government-issued ID Scan",
     icon: IdCard,
     color: "from-indigo-200 to-indigo-100",
     summary: "Verify your age by scanning your government-issued ID.",
@@ -153,14 +153,14 @@ export const METHODS = [
       {
         kicker: "Step 1",
         title: "Install a Digital ID App",
-        body: "Install a digital ID app (e.g., ID.me) on your phone. that supports age verification from your app store. A digital ID app lets you safely store your personal details and securely prove your identity or age to others.",
+        body: "Install a digital ID app (e.g., ID.me) on your phone. A digital ID app lets you safely store your personal details and securely prove your identity or age to others.",
         image: digitalStep1,
         imageAlt: "Provider selection illustration",
       },
       {
         kicker: "Step 2",
         title: "Scan Your Government-Issued ID",
-        body: "Use the digital ID app on your phone to scan your governmental-issued ID document.",
+        body: "Use the digital ID app on your phone to scan your government-issued ID document.",
         image: digitalStep2,
         imageAlt: "Account login and consent illustration",
       },
