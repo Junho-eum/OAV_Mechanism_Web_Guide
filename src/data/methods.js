@@ -26,7 +26,7 @@ import idStep3 from "../assets/ID_step3.png";
 export const METHODS = [
   {
     key: "upload-id",
-    name: "Government-issued ID Scan",
+    name: "Government-issued Photo ID Scan",
     icon: IdCard,
     color: "from-indigo-200 to-indigo-100",
     summary: "Verify your age by scanning your government-issued ID.",
