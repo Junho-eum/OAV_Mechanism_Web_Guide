@@ -135,7 +135,7 @@ export const METHODS = [
       {
         kicker: "Step 3",
         title: "Age Verification",
-        body: "The service simply confirms to the website or app whether you meet their minimum age requirement using your existing account. No other information is shared with the website or app.",
+        body: "Your existing account provider simply confirms to the website or app whether you meet their minimum age requirement using your existing account. No other information is shared with the website or app.",
         image: loginAcc3,
         imageAlt: "Verified claim result illustration",
       },
