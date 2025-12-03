@@ -7,7 +7,7 @@ export default function ProgressBar({ total = 0, viewed = 0 }) {
 
   return (
     <div className="space-y-1">
-      <div className="flex justify-between text-xs text-gray-600">
+      <div className="flex justify-between text-base text-gray-600">
         <span>
           Viewed {clampedViewed} of {safeTotal} methods
         </span>

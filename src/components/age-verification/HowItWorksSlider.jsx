@@ -73,15 +73,15 @@ export default function HowItWorksSlider({ method, onComplete, onFinish }) {
             {/* Copy */}
             <div className="sm:col-span-2">
               {slides[idx]?.kicker && (
-                <p className="text-xs uppercase tracking-wide text-gray-500">
+                <p className="text-sm uppercase tracking-wide text-gray-500">
                   {slides[idx].kicker}
                 </p>
               )}
-              <h3 className="text-base font-semibold">
+              <h3 className="text-2xl font-semibold text-gray-900">
                 {slides[idx]?.title || `Step ${idx + 1}`}
               </h3>
               {slides[idx]?.body && (
-                <p className="mt-2 text-sm text-gray-600 leading-6">
+                <p className="mt-3 text-lg text-gray-700 leading-7">
                   {slides[idx].body}
                 </p>
               )}
