@@ -144,11 +144,11 @@ export const METHODS = [
   },
   {
     key: "mdl",
-    name: "Use a Digital ID App (e.g., Yoti, Mobile Driver's License)",
+    name: "Use a Digital ID App (e.g., ID.me, Yoti, or Mobile Driver's License)",
     icon: ShieldCheck,
     color: "from-indigo-200 to-indigo-100",
     summary:
-      "Prove your age with a digital ID app such as Yoti, Mobile Driver's License.",
+      "Prove your age with a digital ID app such as ID.me, Yoti, or Mobile Driver's License.",
     slides: [
       {
         kicker: "Step 1",
